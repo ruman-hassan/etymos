@@ -1,2 +1,2 @@
 # Etymos
-Players can choose from modules ranging from cuisines to couture to currencies. This is a web-based version of Etymos. 
+Etymos is an a trivia game that enables players to learn about Scrabble words from different cultures in an interactive way. This web-based version consists of modules encompassing cuisines, couture, and currencies. The overall purpose of Etymos is to enable Scrabblers and anyone else interested in words to build their wordpower. 
