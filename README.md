@@ -1,5 +1,5 @@
 # Etymos
-Etymos is an a trivia game that enables players to learn about Scrabble words from different cultures in an interactive way. This version consists of modules encompassing the different African cultures and other categories such as Brands and Mythical creatures. The modules have been built in Python. The overall purpose of Etymos is to enable Scrabblers and anyone else interested in words to build their wordpower.
+Etymos is a trivia game that enables players to learn about Scrabble words from different cultures in an interactive way. This version consists of modules  ranging from african, russian, and french cultures as well as encompassing other categories such as Brands and Mythical creatures. The modules have been built in Python. Apart from enabling Scrabblers to build their wordpower, Etymos can ensure children with learning disabilities such as those affected by Down's syndrome to extend their general knowledge with the end goal being quality and inclusive education in accordance with SDG 4: Quality Education.
 
 To run the web-based version, you can clone the .php, .js, .dart and .html files to your local directory and execute them in visual studio
 
