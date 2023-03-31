@@ -1,3 +1,6 @@
+require("dotenv").config();
+const apiKey = process.env.API_KEY;
+
 async function define_word(word) {
   let word_to_search = word.toLowerCase().trim();
   return fetch(
