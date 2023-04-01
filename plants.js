@@ -27,7 +27,7 @@ function shuffleArray(array) {
   return array;
 }
 
-let array_cuis = ["couscous", "waragi", "matoke", "sosatie", "braai"];
+let array_plants = ["SPIREA", "AYAHUASCA", "ROOIBOS", "CHAPARRAL", "BABASSU"];
 
 let meaningEl = document.body.querySelector("#meaning-el");
 let wordEl = document.body.querySelector("#trial-el");
@@ -41,8 +41,8 @@ function restart() {
 
   index = 0;
   points = 0;
-  shuffleArray(array_cuis); //shuffle the questions again
-  currentWord = array_cuis[index];
+  shuffleArray(array_plants); //shuffle the questions again
+  currentWord = array_plants[index];
   define_word(currentWord).then((definition) => {
     meaningEl.textContent = definition;
   });
@@ -56,11 +56,11 @@ function restart() {
 
 restartButton.addEventListener("click", restart());
 
-shuffleArray(array_cuis);
+shuffleArray(array_plants);
 
-define_word(array_cuis[index]).then((definition) => {
+define_word(array_plants[index]).then((definition) => {
   meaningEl.textContent = definition;
-  currentWord = array_cuis[index];
+  currentWord = array_plants[index];
 });
 
 const submitButton = document.querySelector("#submit-button");
@@ -77,7 +77,7 @@ function submit() {
   //display whether correct or wrong to user
   let resultEl = document.createElement("p");
   resultEl.id = resultElId;
-  if (userWord === currentWord) {
+  if (userWord === currentWord.toLowerCase()) {
     resultEl.textContent = "Correct!";
     points++;
   } else {
@@ -89,15 +89,15 @@ function submit() {
   // Move to the next word in the array
   index++;
 
-  if (index >= array_cuis.length) {
+  if (index >= array_plants.length) {
     //end of game
     let scoreEl = document.createElement("p");
-    scoreEl.textContent = "Score: " + points + "/" + array_cuis.length;
+    scoreEl.textContent = "Score: " + points + "/" + array_plants.length;
     scoreEl.id = "score-el"; // NEW LINE
     document.body.appendChild(scoreEl);
   }
   //game still continuing
-  currentWord = array_cuis[index];
+  currentWord = array_plants[index];
   define_word(currentWord).then((definition) => {
     meaningEl.textContent = definition;
   });

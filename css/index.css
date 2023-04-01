@@ -9,20 +9,17 @@ header a img {
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial,
     sans-serif;
-  /* background-image: url("images/table.png"); */
-  /* background-size: cover; */
   font-weight: bold;
   color: black;
   text-align: center;
-  background-image: url("images/unnamed.jpg");
+  /* background-image: url("images/unnamed.jpg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
 }
 
-#name-meaning{
+#name-meaning {
   background-color: white;
-  
 }
 
 form {
