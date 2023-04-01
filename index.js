@@ -77,7 +77,7 @@ function submit() {
   //display whether correct or wrong to user
   let resultEl = document.createElement("p");
   resultEl.id = resultElId;
-  if (userWord === currentWord) {
+  if (userWord === currentWord.toLowerCase().trim()) {
     resultEl.textContent = "Correct!";
     points++;
   } else {
