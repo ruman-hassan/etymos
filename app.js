@@ -1,3 +1,3 @@
-require("dotenv").config();
-const apiKey = process.env.API_KEY;
+// require("dotenv").config();
+// const apiKey = process.env.API_KEY;
 

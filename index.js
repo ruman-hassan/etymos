@@ -1,5 +1,9 @@
 // require("dotenv").config();
 // const apiKey = process.env.API_KEY;
+//  const apiKey ="C:\Users\lenovo\OneDrive - Strathmore University\Desktop\ilimradi\.env"
+
+// import './test.js';
+// const apiKey=returnAPIKEY()
 
 async function define_word(word) {
   let word_to_search = word.toLowerCase().trim();
