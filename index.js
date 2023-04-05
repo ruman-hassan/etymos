@@ -1,5 +1,5 @@
 // require("dotenv").config();
-// const apiKey = process.env.API_KEY;
+const apiKey = process.env.API_KEY;
 //  const apiKey ="C:\Users\lenovo\OneDrive - Strathmore University\Desktop\ilimradi\.env"
 
 // import './test.js';
@@ -8,8 +8,8 @@
 async function define_word(word) {
   let word_to_search = word.toLowerCase().trim();
   return fetch(
-    `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=nh1cb9m4yspcmwq687www9qn7j3ix3dmppv7a0ot4mn0bwr3v`
-    // `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=${apiKey}`
+    // `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=nh1cb9m4yspcmwq687www9qn7j3ix3dmppv7a0ot4mn0bwr3v`
+    `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=${apiKey}`
   )
     .then((response) => response.json())
     .then((data) => {
