@@ -1,15 +1,8 @@
-// require("dotenv").config();
-const apiKey = process.env.API_KEY;
-//  const apiKey ="C:\Users\lenovo\OneDrive - Strathmore University\Desktop\ilimradi\.env"
-
-// import './test.js';
-// const apiKey=returnAPIKEY()
-
 async function define_word(word) {
   let word_to_search = word.toLowerCase().trim();
   return fetch(
-    // `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=nh1cb9m4yspcmwq687www9qn7j3ix3dmppv7a0ot4mn0bwr3v`
-    `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=${apiKey}`
+    `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=nh1cb9m4yspcmwq687www9qn7j3ix3dmppv7a0ot4mn0bwr3v`
+
   )
     .then((response) => response.json())
     .then((data) => {
@@ -31,7 +24,13 @@ function shuffleArray(array) {
   return array;
 }
 
-let array_cuis = ["couscous", "waragi", "matoke", "sosatie", "braai"];
+let array_cuis = ["scudo", "dulia", "seraph",'cherub','narthex']
+let array_cuis_meaning = ["The former monetary unit of Italy, Bolivia and Malta during the 18th and 19th century.",
+ "The veneration of saints, distinguished from latria, the worship of God", 
+ "A six-winged angel; the highest choir or order of angels in Christian angelology, ranked above cherubim, and below God. A detailed description can be found at the beginning of Isaiah chapter 6",
+  "A winged creature represented over 90 times in the Bible as attending on God, later seen as the second highest order of angels, ranked above thrones and below seraphim. First mention is in Genesis 3:24",
+   "A western vestibule leading to the nave in some (especially Orthodox) Christian churches."];
+
 
 let meaningEl = document.body.querySelector("#meaning-el");
 let wordEl = document.body.querySelector("#trial-el");
@@ -47,9 +46,11 @@ function restart() {
   points = 0;
   shuffleArray(array_cuis); //shuffle the questions again
   currentWord = array_cuis[index];
-  define_word(currentWord).then((definition) => {
-    meaningEl.textContent = definition;
-  });
+  // define_word(currentWord).then((definition) => {
+  //   meaningEl.textContent = definition;
+  // });
+
+  meaningEl.textContent = array_cuis_meaning[index];
 
   //remove the previous results and score
   let existingScoreEl = document.querySelector("result-el");
@@ -62,10 +63,13 @@ restartButton.addEventListener("click", restart());
 
 shuffleArray(array_cuis);
 
-define_word(array_cuis[index]).then((definition) => {
-  meaningEl.textContent = definition;
-  currentWord = array_cuis[index];
-});
+// define_word(array_cuis[index]).then((definition) => {
+//   meaningEl.textContent = definition;
+//   currentWord = array_cuis[index];
+// });
+
+meaningEl.textContent = array_cuis_meaning[index];
+currentWord = array_cuis[index];
 
 const submitButton = document.querySelector("#submit-button");
 submitButton.addEventListener("click", submit());
@@ -102,9 +106,11 @@ function submit() {
   }
   //game still continuing
   currentWord = array_cuis[index];
-  define_word(currentWord).then((definition) => {
-    meaningEl.textContent = definition;
-  });
+  // define_word(currentWord).then((definition) => {
+  //   meaningEl.textContent = definition;
+  // });
+
+  meaningEl.textContent = array_cuis_meaning[index];
 }
 
 //check if name can be played in scrabble
