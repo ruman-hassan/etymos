@@ -15,14 +15,8 @@ async function define_word(word) {
     .catch((error) => console.error(error));
 }
 
-let array_easter = ["scudo", "dulia", "seraph", "cherub", "narthex"];
-// let array_easter_meaning = [
-//   "The former monetary unit of Italy, Bolivia and Malta during the 18th and 19th century.",
-//   "The veneration of saints, distinguished from latria, the worship of God",
-//   "A six-winged angel; the highest choir or order of angels in Christian angelology, ranked above cherubim, and below God. A detailed description can be found at the beginning of Isaiah chapter 6",
-//   "A winged creature represented over 90 times in the Bible as attending on God, later seen as the second highest order of angels, ranked above thrones and below seraphim. First mention is in Genesis 3:24",
-//   "A western vestibule leading to the nave in some (especially Orthodox) Christian churches.",
-// ];
+let array_easter = ["zakat", "salat", "shahada", "hajj", "jihad"];
+
 
 let count = array_easter.length;
 let points = 0;
