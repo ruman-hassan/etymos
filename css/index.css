@@ -13,10 +13,11 @@ body {
   color: black;
   text-align: center;
   background-image: url("images/Vg3AvFeV.jpg");
-  background-size:250px;
-  
+  background-size: 250px;
+
   background-repeat: no-repeat;
-  background-position:  center;
+  background-position: center;
+  font-size: 300%;
 }
 
 #name-meaning {
@@ -59,7 +60,6 @@ header {
 
 header h1 {
   margin: 0;
-  
 }
 
 header nav {
@@ -88,10 +88,9 @@ main {
   padding: 20px;
 }
 
-h1{
+h1 {
   background-color: whitesmoke;
   display: inline-block;
-  
 }
 
 section {
