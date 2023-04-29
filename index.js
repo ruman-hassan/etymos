@@ -2,7 +2,6 @@ async function define_word(word) {
   let word_to_search = word.toLowerCase().trim();
   return fetch(
     `https://api.wordnik.com/v4/word.json/${word_to_search}/definitions?limit=200&partOfSpeech=noun&includeRelated=false&sourceDictionaries=wiktionary&useCanonical=false&includeTags=false&api_key=nh1cb9m4yspcmwq687www9qn7j3ix3dmppv7a0ot4mn0bwr3v`
-
   )
     .then((response) => response.json())
     .then((data) => {
@@ -24,13 +23,14 @@ function shuffleArray(array) {
   return array;
 }
 
-let array_cuis = ["scudo", "dulia", "seraph",'cherub','narthex']
-let array_cuis_meaning = ["The former monetary unit of Italy, Bolivia and Malta during the 18th and 19th century.",
- "The veneration of saints, distinguished from latria, the worship of God", 
- "A six-winged angel; the highest choir or order of angels in Christian angelology, ranked above cherubim, and below God. A detailed description can be found at the beginning of Isaiah chapter 6",
+let array_cuis = ["scudo", "dulia", "seraph", "cherub", "narthex"];
+let array_cuis_meaning = [
+  "The former monetary unit of Italy, Bolivia and Malta during the 18th and 19th century.",
+  "The veneration of saints, distinguished from latria, the worship of God",
+  "A six-winged angel; the highest choir or order of angels in Christian angelology, ranked above cherubim, and below God. A detailed description can be found at the beginning of Isaiah chapter 6",
   "A winged creature represented over 90 times in the Bible as attending on God, later seen as the second highest order of angels, ranked above thrones and below seraphim. First mention is in Genesis 3:24",
-   "A western vestibule leading to the nave in some (especially Orthodox) Christian churches."];
-
+  "A western vestibule leading to the nave in some (especially Orthodox) Christian churches.",
+];
 
 let meaningEl = document.body.querySelector("#meaning-el");
 let wordEl = document.body.querySelector("#trial-el");

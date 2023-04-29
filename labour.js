@@ -15,21 +15,27 @@ async function define_word(word) {
     .catch((error) => console.error(error));
 }
 
-let array_easter = ["scudo", "dulia", "seraph", "cherub", "narthex"];
-// let array_easter_meaning = [
-//   "The former monetary unit of Italy, Bolivia and Malta during the 18th and 19th century.",
-//   "The veneration of saints, distinguished from latria, the worship of God",
-//   "A six-winged angel; the highest choir or order of angels in Christian angelology, ranked above cherubim, and below God. A detailed description can be found at the beginning of Isaiah chapter 6",
-//   "A winged creature represented over 90 times in the Bible as attending on God, later seen as the second highest order of angels, ranked above thrones and below seraphim. First mention is in Genesis 3:24",
-//   "A western vestibule leading to the nave in some (especially Orthodox) Christian churches.",
-// ];
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// let array_easter = ["zakat", "salat", "shahada", "hajj", "jihad"]; //idd  el fitr
+// let array_easter = ["scudo", "dulia", "seraph", "cherub", "narthex"]; //easter 
+let array_easter = [ "KULAK", 'ubuntu',"DESYATINa",'BOURGEOIS','laborite'];  //labour day
+
 
 let count = array_easter.length;
 let points = 0;
 
+  //SHUFFLE THE ARRAY HERE
+  shuffleArray(array_easter);
 for (let i = 0; i < count; i++) {
   let meaningEl = document.createElement("p"); // create a new element for each meaning
-  let currentWord = array_easter[i]; //the word
+  let currentWord = array_easter[i].toUpperCase(); //the word
   //display meaning of the word
   define_word(currentWord).then((definition) => {
     meaningEl.textContent = definition;
@@ -37,16 +43,32 @@ for (let i = 0; i < count; i++) {
 
   document.body.appendChild(meaningEl); //append meaning to doc
 
-  // let resultEl = document.createElement("p"); // create a new element for each result
-  let inputEl = document.createElement("input"); // create an input element
-  inputEl.type = "text"; // set input type to text
-  inputEl.placeholder = "Check answer"; // set placeholder text for input
-  document.body.appendChild(inputEl);
+// CREATE CHOICES 
+  // create select element
+  const selectEl = document.createElement("select");
 
-  inputEl.addEventListener("change", function () {
+  // create option elements and add them to the select element
+  
+  const option = document.createElement("option");
+  option.text = "";
+  selectEl.add(option);
+
+
+  array_easter.forEach((element) => {
+    const option = document.createElement("option");
+    option.text = element.toUpperCase();
+    selectEl.add(option);
+  });
+
+  // append select element to document
+  document.body.appendChild(selectEl);
+
+  selectEl.addEventListener("change", function () {
     // add event listener to input element
-    let trial = inputEl.value.trim().toLowerCase(); // get user's trial and convert to lowercase
-    if (trial === currentWord) {
+    let selectedWord = selectEl.options[selectEl.selectedIndex].value;
+    // let trial = inputEl.value.trim().toLowerCase(); // get user's trial and convert to lowercase
+
+    if (selectedWord === currentWord) {
       meaningEl.style.color = "green"; // if correct, change text color to green
       meaningEl.textContent += ` Correct!`;
       points++;
@@ -55,7 +77,7 @@ for (let i = 0; i < count; i++) {
       meaningEl.textContent += ` Wrong! The answer is ${currentWord.toUpperCase()}.`; // append correct answer to meaning text
     }
 
-    inputEl.disabled = true; // disable input element after user submits their trial
+    selectEl.disabled = true; // disable input element after user submits their trial
 
     // check if quiz is over
     if (i === count - 1) {
