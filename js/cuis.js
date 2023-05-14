@@ -23,19 +23,16 @@ function shuffleArray(array) {
   return array;
 }
 
-// let array_easter = ["zakat", "salat", "shahada", "hajj", "jihad"]; //idd  el fitr
-// let array_easter = ["scudo", "dulia", "seraph", "cherub", "narthex"]; //easter 
-let array_easter = [ "KULAK", 'ubuntu',"DESYATINa",'BOURGEOIS','laborite'];  //labour day
+let array_cuis = ["KULAK", "ubuntu", "DESYATINa", "BOURGEOIS", "laborite"];
 
-
-let count = array_easter.length;
+let count = array_cuis.length;
 let points = 0;
 
-  //SHUFFLE THE ARRAY HERE
-  shuffleArray(array_easter);
+//SHUFFLE THE ARRAY HERE
+shuffleArray(array_cuis);
 for (let i = 0; i < count; i++) {
   let meaningEl = document.createElement("p"); // create a new element for each meaning
-  let currentWord = array_easter[i].toUpperCase(); //the word
+  let currentWord = array_cuis[i].toUpperCase(); //the word
   //display meaning of the word
   define_word(currentWord).then((definition) => {
     meaningEl.textContent = definition;
@@ -43,18 +40,17 @@ for (let i = 0; i < count; i++) {
 
   document.body.appendChild(meaningEl); //append meaning to doc
 
-// CREATE CHOICES 
+  // CREATE CHOICES
   // create select element
   const selectEl = document.createElement("select");
 
   // create option elements and add them to the select element
-  
+
   const option = document.createElement("option");
   option.text = "";
   selectEl.add(option);
 
-
-  array_easter.forEach((element) => {
+  array_cuis.forEach((element) => {
     const option = document.createElement("option");
     option.text = element.toUpperCase();
     selectEl.add(option);
