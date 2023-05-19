@@ -8,6 +8,7 @@ header a img {
 
 body {
   font-family: "Comme", sans-serif;
+  /* font-family:  */
 
   font-weight: bold;
   color: black;
@@ -23,11 +24,31 @@ body {
   background-color: white;
 }
 
-#name-input,
+
 #name-button {
   margin: 10px 0;
   padding: 12px 24px;
- }
+}
+
+#name-input {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #eaeaea;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+#name-input:hover,
+#name-input:focus {
+  background-color: #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 
 form {
   text-align: center;
@@ -66,6 +87,8 @@ header {
 header h1 {
   margin: 0;
 }
+
+
 
 header nav {
   /* float: right; */
@@ -262,7 +285,6 @@ each other when they are rendered out vertically */
   margin-bottom: 2px;
   margin-top: 2px;
 } */
-
 
 /* 
 .wp-block-button {

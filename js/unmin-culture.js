@@ -26,7 +26,7 @@ function shuffleArray(array) {
 // let array_easter = ["zakat", "salat", "shahada", "hajj", "jihad"]; //idd  el fitr
 // let array_easter = ["scudo", "dulia", "seraph", "cherub", "narthex"]; //easter
 // let array_easter = [ "KULAK", 'ubuntu',"DESYATINa",'BOURGEOIS','laborite'];  //labour day
-let array_easter = ["bwana", "benga", "mzee", "jomo",'matatu']; //kikuyu day
+let array_easter = ["bwana", "benga", "mzee", "jomo", "matatu"]; //kikuyu day
 
 //'mwalimu', "taata" ,'kikuyu' -not found
 
@@ -48,6 +48,7 @@ for (let i = 0; i < count; i++) {
   // CREATE CHOICES
   // create select element
   const selectEl = document.createElement("select");
+  applyStylesToElement(selectEl);
 
   // create option elements and add them to the select element
 
@@ -83,8 +84,36 @@ for (let i = 0; i < count; i++) {
     // check if quiz is over
     if (i === count - 1) {
       let scoreEl = document.createElement("p"); // create a new element to display score
-      scoreEl.textContent = `You got ${points} out of ${count} correct.`; // set score text
+      scoreEl.textContent = `You got ${points} out of ${count} ${scoreOutput(
+        points
+      )}`; // set score text
       document.body.appendChild(scoreEl); // append score to doc
     }
   });
+}
+
+function applyStylesToElement(element) {
+  element.style.color = "#333";
+  element.style.padding = "10px 20px";
+  element.style.margin = "10px 0";
+  element.style.backgroundColor = "#eaeaea";
+  element.style.border = "2px solid #ccc";
+  element.style.fontSize = "16px";
+  element.style.textShadow = "1px 1px 2px rgba(0, 0, 0, 0.3)";
+  element.style.transition = "background-color 0.3s ease";
+  element.style.borderRadius = "5px";
+  element.style.fontFamily =
+    "Franklin Gothic Medium, Arial Narrow, Arial, sans-serif";
+}
+
+function scoreOutput(points) {
+  if (points === 5) {
+    return "🏆"; // Trophy emoji for full score
+  } else if (points === 4 || points === 3) {
+    return "🥇"; // Gold medal emoji for good scores
+  } else if (points === 2 || points === 1) {
+    return "🥈"; // Silver medal emoji for average scores
+  } else {
+    return "👎🏾"; // Thumbs down emoji for low scores
+  }
 }
