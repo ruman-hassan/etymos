@@ -23,7 +23,20 @@ function shuffleArray(array) {
   return array;
 }
 
-let array_cuis = ["matzoh", "MIKVEH", "menorah", "paynim", "jorum"];
+//MAIN PROGRAM
+
+let array_cuis = [
+  "matzoh",
+  "MIKVEH",
+  "menorah",
+  "paynim",
+  "jorum",
+  "jeroboam",
+  "cherub",
+  "seraph",
+  "mitzvah",
+  "zuz",
+];
 
 let count = array_cuis.length;
 let points = 0;
@@ -51,6 +64,11 @@ for (let i = 0; i < count; i++) {
   option.text = "";
   selectEl.add(option);
 
+  //shuffle the choices
+  // const array_choices = array_cuis;
+  // shuffleArray(array_choices);
+
+  //add the shuffled choices to the array
   array_cuis.forEach((element) => {
     const option = document.createElement("option");
     option.text = element.toUpperCase();
@@ -102,13 +120,9 @@ function applyStylesToElement(element) {
 }
 
 function scoreOutput(points) {
-  if (points === 5) {
-    return "🏆"; // Trophy emoji for full score
-  } else if (points === 4 || points === 3) {
-    return "🥇"; // Gold medal emoji for good scores
-  } else if (points === 2 || points === 1) {
-    return "🥈"; // Silver medal emoji for average scores
+  if (points >= count) {
+    return "🏆"; // Trophy emoji for more than average scores
   } else {
-    return "👎🏾"; // Thumbs down emoji for low scores
+    return "👎🏾"; // Thumbs down for below average scores
   }
 }
