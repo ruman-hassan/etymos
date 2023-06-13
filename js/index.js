@@ -46,36 +46,36 @@ nameButton.addEventListener("click", async function () {
   nameInput.value = "";
 });
 
-// let slideIndex = 0;
-// showSlides();
+let slideIndex = 0;
+showSlides();
 
-// function showSlides() {
-//   let i;
-//   let slides = document.getElementsByClassName("mySlides");
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   slideIndex++;
-//   if (slideIndex > slides.length) {
-//     slideIndex = 1;
-//   }
-//   slides[slideIndex - 1].style.display = "block";
-//   setTimeout(showSlides, 4000); // Change image every 4 seconds
-// }
-
-
-
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-
-function showSlide() {
-  slides.forEach((slide) => {
-    slide.classList.remove('active');
-  });
-
-  slides[currentSlide].classList.add('active');
-  currentSlide = (currentSlide + 1) % slides.length;
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
-setInterval(showSlide, 1000);
+
+
+// const slides = document.querySelectorAll('.slide');
+// let currentSlide = 0;
+
+// function showSlide() {
+//   slides.forEach((slide) => {
+//     slide.classList.remove('active');
+//   });
+
+//   slides[currentSlide].classList.add('active');
+//   currentSlide = (currentSlide + 1) % slides.length;
+// }
+
+// setInterval(showSlide, 1000);
 

@@ -380,27 +380,37 @@ each other when they are rendered out vertically */
   box-sizing: border-box;
 } */
 
-/* new slides  */
 .slideshow-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.slide {
+  max-width: 1000px;
   position: relative;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  margin: auto;
+  z-index: -1;
 }
 
-.slide.active {
-  opacity: 1;
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* resize slideshow images */
+.mySlides img {
+  width: 50%;
+  max-height: fit-content;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
