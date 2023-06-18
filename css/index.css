@@ -317,8 +317,6 @@ each other when they are rendered out vertically */
   color: green;
 }
 
-
-
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
@@ -386,8 +384,6 @@ each other when they are rendered out vertically */
   margin: auto;
   z-index: -1;
 }
-
-
 
 /* Hide the images by default */
 .mySlides {
